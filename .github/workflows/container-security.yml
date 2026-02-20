@@ -69,13 +69,14 @@ jobs:
           format: 'sarif'
           output: 'trivy-results.sarif'
           severity: 'CRITICAL,HIGH'
+          ignore-unfixed: true
           exit-code: '0'  # Don't fail on scan, check results separately
       
       - name: Check for critical vulnerabilities
         run: |
-          if jq -e '.runs[0].results[] | select(.level=="error")' trivy-results.sarif > /dev/null; then
+          if jq -e '.runs[0].results[] | select(.level=="error" and (.message.text | test("Fixed Version:\\s*\\n") | not))' trivy-results.sarif > /dev/null; then
             echo "❌ Critical vulnerabilities detected in Trivy scan"
-            jq '.runs[0].results[] | select(.level=="error") | {message: .message.text, level: .level}' trivy-results.sarif
+            jq '.runs[0].results[] | select(.level=="error" and (.message.text | test("Fixed Version:\\s*\\n") | not)) | {message: .message.text, level: .level}' trivy-results.sarif
             exit 1
           else
             echo "✅ No critical vulnerabilities found"

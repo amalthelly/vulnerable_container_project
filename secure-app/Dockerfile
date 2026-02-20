@@ -13,8 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Install dependencies in builder stage
 COPY requirements.txt .
-RUN pip install --upgrade pip setuptools wheel && \
-     pip install --no-cache-dir --user -r requirements.txt && \
+RUN pip install --no-cache-dir --user -r requirements.txt && \
      rm -rf /root/.cache/pip
 
 
