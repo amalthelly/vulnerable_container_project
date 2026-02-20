@@ -21,6 +21,12 @@ RUN pip install --upgrade pip setuptools wheel && \
 # Final stage with minimal image
 FROM python:3.11-slim-bookworm
 
+# Update system packages immediately to fix vulnerabilities
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 # Create non-root user
 RUN groupadd -r appuser && \
     useradd -r -g appuser -u 1000 appuser && \
@@ -32,12 +38,6 @@ WORKDIR /app
 # Copy only necessary files from builder
 COPY --from=builder /root/.local /home/appuser/.local
 COPY --chown=appuser:appuser app.py .
-
-# Update system packages for security
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
 
 # Switch to non-root user
 USER appuser
