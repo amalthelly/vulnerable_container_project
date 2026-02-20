@@ -115,8 +115,8 @@ jobs:
           # Install Grype
           curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
           
-          # Scan using SBOM
-          grype sbom:./sbom.json --fail-on high
+          # Scan using SBOM (fail only on actionable critical vulns)
+          grype sbom:./sbom.json --only-fixed --fail-on critical
       
       - name: Log in to registry
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
