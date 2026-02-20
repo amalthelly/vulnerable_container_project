@@ -74,9 +74,9 @@ jobs:
       
       - name: Check for critical vulnerabilities
         run: |
-          if jq -e '.runs[0].results[] | select(.level=="error" and (.message.text | test("Fixed Version:\\s*\\n") | not))' trivy-results.sarif > /dev/null; then
+          if jq -e '.runs[0].results[] | select(.level=="error" and (.message.text | test("Fixed Version:\\s*\\S") | not))' trivy-results.sarif > /dev/null; then
             echo "❌ Critical vulnerabilities detected in Trivy scan"
-            jq '.runs[0].results[] | select(.level=="error" and (.message.text | test("Fixed Version:\\s*\\n") | not)) | {message: .message.text, level: .level}' trivy-results.sarif
+            jq '.runs[0].results[] | select(.level=="error" and (.message.text | test("Fixed Version:\\s*\\S") | not)) | {message: .message.text, level: .level}' trivy-results.sarif
             exit 1
           else
             echo "✅ No critical vulnerabilities found"
