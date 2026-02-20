@@ -1,52 +1,67 @@
-from flask import flask, request, jsonify
+from flask import Flask, request, jsonify
 import os
-import subprocess
+import logging
 import yaml
 
-app = flask(__name__)
+app = Flask(__name__)
 
-# Hardcoded secret (vulnerability!)
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
-API_KEY = "sk-1234567890abcdefghijklmnopqrstuvwxyz"
-DB_PASSWORD = "admin123"
+# Load secrets from environment variables
+API_KEY = os.environ.get('API_KEY', '')
+DB_PASSWORD = os.environ.get('DB_PASSWORD', '')
 
+if not API_KEY or not DB_PASSWORD:
+    logger.error("Required environment variables not set!")
 
 @app.route('/')
 def home():
     return jsonify({
         "status": "running",
-        "version": "1.0.0"
+        "version": "2.0.0"
     })
+
+@app.route('/health')
+def health():
+    """Health check endpoint"""
+    return jsonify({"status": "healthy"}), 200
 
 @app.route('/api/search')
 def search():
-    # Command injection vulnerability!
+    # Fixed: Input validation, no shell execution
     query = request.args.get('q', '')
-    result = subprocess.check_output(f'echo {query}', shell=True)
-    return result
+    
+    # Validate input
+    if not query.isalnum():
+        return jsonify({"error": "Invalid query"}), 400
+    
+    # Safe processing without shell
+    return jsonify({"query": query, "results": []})
 
 @app.route('/api/config')
 def get_config():
-    # Exposing sensitive info
+    # Fixed: Never expose secrets
     return jsonify({
-        "api_key": API_KEY,
         "database": {
-            "host": "db.internal",
-            "password": DB_PASSWORD
-        }
+            "host": "db.internal"
+            # Password not exposed
+        },
+        "version": "2.0.0"
     })
 
 @app.route('/api/yaml')
 def parse_yaml():
-    # Unsafe YAML parsing (deserialization vulnerability)
+    # Fixed: Use SafeLoader
     data = request.args.get('data', '')
-    parsed = yaml.load(data, Loader=yaml.Loader)
-    return jsonify(parsed)
+    try:
+        parsed = yaml.load(data, Loader=yaml.SafeLoader)
+        return jsonify(parsed)
+    except yaml.YAMLError as e:
+        return jsonify({"error": "Invalid YAML"}), 400
 
 if __name__ == '__main__':
-    # Running on all interfaces (security issue)
-    # Debug mode enabled in production (security issue)
-    app.run(host='0.0.0.0', port=5000, debug=True)
-
-
-
+    # Fixed: Not running in debug mode
+    # Use proper WSGI server in production
+    app.run(host='0.0.0.0', port=5000, debug=False)

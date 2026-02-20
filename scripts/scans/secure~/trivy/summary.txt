@@ -1,0 +1,188 @@
+
+Report Summary
+
+┌──────────────────────────────────────────────────────────────────────────────────┬────────────┬─────────────────┬─────────┐
+│                                      Target                                      │    Type    │ Vulnerabilities │ Secrets │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ secure-flask-app:v2.0 (debian 12.13)                                             │   debian   │        4        │    -    │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ home/appuser/.local/lib/python3.11/site-packages/blinker-1.9.0.dist-info/METADA- │ python-pkg │        0        │    -    │
+│ TA                                                                               │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ home/appuser/.local/lib/python3.11/site-packages/certifi-2026.1.4.dist-info/MET- │ python-pkg │        0        │    -    │
+│ ADATA                                                                            │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ home/appuser/.local/lib/python3.11/site-packages/cffi-2.0.0.dist-info/METADATA   │ python-pkg │        0        │    -    │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ home/appuser/.local/lib/python3.11/site-packages/charset_normalizer-3.4.4.dist-- │ python-pkg │        0        │    -    │
+│ info/METADATA                                                                    │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ home/appuser/.local/lib/python3.11/site-packages/click-8.3.1.dist-info/METADATA  │ python-pkg │        0        │    -    │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ home/appuser/.local/lib/python3.11/site-packages/cryptography-41.0.7.dist-info/- │ python-pkg │        3        │    -    │
+│ METADATA                                                                         │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ home/appuser/.local/lib/python3.11/site-packages/flask-3.0.0.dist-info/METADATA  │ python-pkg │        0        │    -    │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ home/appuser/.local/lib/python3.11/site-packages/gunicorn-21.2.0.dist-info/META- │ python-pkg │        2        │    -    │
+│ DATA                                                                             │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ home/appuser/.local/lib/python3.11/site-packages/idna-3.11.dist-info/METADATA    │ python-pkg │        0        │    -    │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ home/appuser/.local/lib/python3.11/site-packages/itsdangerous-2.2.0.dist-info/M- │ python-pkg │        0        │    -    │
+│ ETADATA                                                                          │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ home/appuser/.local/lib/python3.11/site-packages/jinja2-3.1.6.dist-info/METADATA │ python-pkg │        0        │    -    │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ home/appuser/.local/lib/python3.11/site-packages/markupsafe-3.0.3.dist-info/MET- │ python-pkg │        0        │    -    │
+│ ADATA                                                                            │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ home/appuser/.local/lib/python3.11/site-packages/pycparser-3.0.dist-info/METADA- │ python-pkg │        0        │    -    │
+│ TA                                                                               │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ home/appuser/.local/lib/python3.11/site-packages/pyyaml-6.0.1.dist-info/METADATA │ python-pkg │        0        │    -    │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ home/appuser/.local/lib/python3.11/site-packages/requests-2.31.0.dist-info/META- │ python-pkg │        0        │    -    │
+│ DATA                                                                             │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ home/appuser/.local/lib/python3.11/site-packages/urllib3-2.1.0.dist-info/METADA- │ python-pkg │        3        │    -    │
+│ TA                                                                               │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ home/appuser/.local/lib/python3.11/site-packages/werkzeug-3.0.1.dist-info/METAD- │ python-pkg │        1        │    -    │
+│ ATA                                                                              │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.11/site-packages/pip-24.0.dist-info/METADATA               │ python-pkg │        0        │    -    │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.11/site-packages/setuptools-79.0.1.dist-info/METADATA      │ python-pkg │        0        │    -    │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.11/site-packages/setuptools/_vendor/autocommand-2.2.2.dis- │ python-pkg │        0        │    -    │
+│ t-info/METADATA                                                                  │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.11/site-packages/setuptools/_vendor/backports.tarfile-1.2- │ python-pkg │        0        │    -    │
+│ .0.dist-info/METADATA                                                            │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.11/site-packages/setuptools/_vendor/importlib_metadata-8.- │ python-pkg │        0        │    -    │
+│ 0.0.dist-info/METADATA                                                           │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.11/site-packages/setuptools/_vendor/inflect-7.3.1.dist-in- │ python-pkg │        0        │    -    │
+│ fo/METADATA                                                                      │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.11/site-packages/setuptools/_vendor/jaraco.collections-5.- │ python-pkg │        0        │    -    │
+│ 1.0.dist-info/METADATA                                                           │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.11/site-packages/setuptools/_vendor/jaraco.context-5.3.0.- │ python-pkg │        1        │    -    │
+│ dist-info/METADATA                                                               │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.11/site-packages/setuptools/_vendor/jaraco.functools-4.0.- │ python-pkg │        0        │    -    │
+│ 1.dist-info/METADATA                                                             │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.11/site-packages/setuptools/_vendor/jaraco.text-3.12.1.di- │ python-pkg │        0        │    -    │
+│ st-info/METADATA                                                                 │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.11/site-packages/setuptools/_vendor/more_itertools-10.3.0- │ python-pkg │        0        │    -    │
+│ .dist-info/METADATA                                                              │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.11/site-packages/setuptools/_vendor/packaging-24.2.dist-i- │ python-pkg │        0        │    -    │
+│ nfo/METADATA                                                                     │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.di- │ python-pkg │        0        │    -    │
+│ st-info/METADATA                                                                 │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.11/site-packages/setuptools/_vendor/tomli-2.0.1.dist-info- │ python-pkg │        0        │    -    │
+│ /METADATA                                                                        │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.11/site-packages/setuptools/_vendor/typeguard-4.3.0.dist-- │ python-pkg │        0        │    -    │
+│ info/METADATA                                                                    │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.11/site-packages/setuptools/_vendor/typing_extensions-4.1- │ python-pkg │        0        │    -    │
+│ 2.2.dist-info/METADATA                                                           │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.11/site-packages/setuptools/_vendor/wheel-0.45.1.dist-inf- │ python-pkg │        1        │    -    │
+│ o/METADATA                                                                       │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.11/site-packages/setuptools/_vendor/zipp-3.19.2.dist-info- │ python-pkg │        0        │    -    │
+│ /METADATA                                                                        │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.11/site-packages/wheel-0.45.1.dist-info/METADATA           │ python-pkg │        1        │    -    │
+└──────────────────────────────────────────────────────────────────────────────────┴────────────┴─────────────────┴─────────┘
+Legend:
+- '-': Not scanned
+- '0': Clean (no security findings detected)
+
+
+secure-flask-app:v2.0 (debian 12.13)
+====================================
+Total: 4 (HIGH: 2, CRITICAL: 2)
+
+┌──────────────┬────────────────┬──────────┬──────────────┬───────────────────┬───────────────┬──────────────────────────────────────────────────────────────┐
+│   Library    │ Vulnerability  │ Severity │    Status    │ Installed Version │ Fixed Version │                            Title                             │
+├──────────────┼────────────────┼──────────┼──────────────┼───────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ libc-bin     │ CVE-2026-0861  │ HIGH     │ affected     │ 2.36-9+deb12u13   │               │ glibc: Integer overflow in memalign leads to heap corruption │
+│              │                │          │              │                   │               │ https://avd.aquasec.com/nvd/cve-2026-0861                    │
+├──────────────┤                │          │              │                   ├───────────────┤                                                              │
+│ libc6        │                │          │              │                   │               │                                                              │
+│              │                │          │              │                   │               │                                                              │
+├──────────────┼────────────────┼──────────┤              ├───────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ libsqlite3-0 │ CVE-2025-7458  │ CRITICAL │              │ 3.40.1-2+deb12u2  │               │ sqlite: SQLite integer overflow                              │
+│              │                │          │              │                   │               │ https://avd.aquasec.com/nvd/cve-2025-7458                    │
+├──────────────┼────────────────┤          ├──────────────┼───────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ zlib1g       │ CVE-2023-45853 │          │ will_not_fix │ 1:1.2.13.dfsg-1   │               │ zlib: integer overflow and resultant heap-based buffer       │
+│              │                │          │              │                   │               │ overflow in zipOpenNewFileInZip4_6                           │
+│              │                │          │              │                   │               │ https://avd.aquasec.com/nvd/cve-2023-45853                   │
+└──────────────┴────────────────┴──────────┴──────────────┴───────────────────┴───────────────┴──────────────────────────────────────────────────────────────┘
+
+Python (python-pkg)
+===================
+Total: 12 (HIGH: 12, CRITICAL: 0)
+
+┌───────────────────────────┬────────────────┬──────────┬────────┬───────────────────┬───────────────┬──────────────────────────────────────────────────────────────┐
+│          Library          │ Vulnerability  │ Severity │ Status │ Installed Version │ Fixed Version │                            Title                             │
+├───────────────────────────┼────────────────┼──────────┼────────┼───────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ Werkzeug (METADATA)       │ CVE-2024-34069 │ HIGH     │ fixed  │ 3.0.1             │ 3.0.3         │ python-werkzeug: user may execute code on a developer's      │
+│                           │                │          │        │                   │               │ machine                                                      │
+│                           │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2024-34069                   │
+├───────────────────────────┼────────────────┤          │        ├───────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ cryptography (METADATA)   │ CVE-2023-50782 │          │        │ 41.0.7            │ 42.0.0        │ python-cryptography: Bleichenbacher timing oracle attack     │
+│                           │                │          │        │                   │               │ against RSA decryption - incomplete fix for...               │
+│                           │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2023-50782                   │
+│                           ├────────────────┤          │        │                   ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                           │ CVE-2024-26130 │          │        │                   │ 42.0.4        │ python-cryptography: NULL pointer dereference with           │
+│                           │                │          │        │                   │               │ pkcs12.serialize_key_and_certificates when called with a     │
+│                           │                │          │        │                   │               │ non-matching certificate...                                  │
+│                           │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2024-26130                   │
+│                           ├────────────────┤          │        │                   ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                           │ CVE-2026-26007 │          │        │                   │ 46.0.5        │ cryptography: cryptography Subgroup Attack Due to Missing    │
+│                           │                │          │        │                   │               │ Subgroup Validation for SECT Curves...                       │
+│                           │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-26007                   │
+├───────────────────────────┼────────────────┤          │        ├───────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ gunicorn (METADATA)       │ CVE-2024-1135  │          │        │ 21.2.0            │ 22.0.0        │ python-gunicorn: HTTP Request Smuggling due to improper      │
+│                           │                │          │        │                   │               │ validation of Transfer-Encoding headers                      │
+│                           │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2024-1135                    │
+│                           ├────────────────┤          │        │                   │               ├──────────────────────────────────────────────────────────────┤
+│                           │ CVE-2024-6827  │          │        │                   │               │ gunicorn: HTTP Request Smuggling in benoitc/gunicorn         │
+│                           │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2024-6827                    │
+├───────────────────────────┼────────────────┤          │        ├───────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ jaraco.context (METADATA) │ CVE-2026-23949 │          │        │ 5.3.0             │ 6.1.0         │ jaraco.context: jaraco.context: Path traversal via malicious │
+│                           │                │          │        │                   │               │ tar archives                                                 │
+│                           │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-23949                   │
+├───────────────────────────┼────────────────┤          │        ├───────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ urllib3 (METADATA)        │ CVE-2025-66418 │          │        │ 2.1.0             │ 2.6.0         │ urllib3: urllib3: Unbounded decompression chain leads to     │
+│                           │                │          │        │                   │               │ resource exhaustion                                          │
+│                           │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2025-66418                   │
+│                           ├────────────────┤          │        │                   │               ├──────────────────────────────────────────────────────────────┤
+│                           │ CVE-2025-66471 │          │        │                   │               │ urllib3: urllib3 Streaming API improperly handles highly     │
+│                           │                │          │        │                   │               │ compressed data                                              │
+│                           │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2025-66471                   │
+│                           ├────────────────┤          │        │                   ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                           │ CVE-2026-21441 │          │        │                   │ 2.6.3         │ urllib3: urllib3 vulnerable to decompression-bomb safeguard  │
+│                           │                │          │        │                   │               │ bypass when following HTTP redirects (streaming...           │
+│                           │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-21441                   │
+├───────────────────────────┼────────────────┤          │        ├───────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ wheel (METADATA)          │ CVE-2026-24049 │          │        │ 0.45.1            │ 0.46.2        │ wheel: wheel: Privilege Escalation or Arbitrary Code         │
+│                           │                │          │        │                   │               │ Execution via malicious wheel file...                        │
+│                           │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-24049                   │
+│                           │                │          │        │                   │               │                                                              │
+│                           │                │          │        │                   │               │                                                              │
+│                           │                │          │        │                   │               │                                                              │
+│                           │                │          │        │                   │               │                                                              │
+└───────────────────────────┴────────────────┴──────────┴────────┴───────────────────┴───────────────┴──────────────────────────────────────────────────────────────┘

@@ -1,0 +1,56 @@
+name: Deploy to Kubernetes
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  IMAGE_NAME: secure-flask-app
+  REGISTRY: ghcr.io
+
+jobs:
+  deploy:
+    name: Deploy to Cluster
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Configure kubectl
+        uses: azure/setup-kubectl@v3
+      
+      - name: Set up kubeconfig
+        run: |
+          # Configure your cluster access here
+          echo "${{ secrets.KUBE_CONFIG }}" | base64 -d > kubeconfig
+          export KUBECONFIG=kubeconfig
+      
+      - name: Verify image signature
+        run: |
+          # Install cosign
+          curl -O -L "https://github.com/sigstore/cosign/releases/latest/download/cosign-linux-amd64"
+          chmod +x cosign-linux-amd64
+          sudo mv cosign-linux-amd64 /usr/local/bin/cosign
+          
+          # Verify signature (if signing is implemented)
+          # cosign verify --key cosign.pub ${{ env.REGISTRY }}/${{ github.repository }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+      
+      - name: Deploy to Kubernetes
+        run: |
+          # Update deployment with new image
+          kubectl set image deployment/flask-app \
+            flask-app=${{ env.REGISTRY }}/${{ github.repository }}/${{ env.IMAGE_NAME }}:${{ github.sha }} \
+            --namespace production
+          
+          # Wait for rollout
+          kubectl rollout status deployment/flask-app --namespace production
+      
+      - name: Run post-deployment security checks
+        run: |
+          # Verify pods are running as non-root
+          kubectl get pods -n production -l app=flask-app -o json | \
+            jq '.items[].spec.containers[].securityContext.runAsNonRoot'
+          
+          # Verify no privileged containers
+          kubectl get pods -n production -l app=flask-app -o json | \
+            jq '.items[].spec.containers[] | select(.securityContext.privileged==true)'
